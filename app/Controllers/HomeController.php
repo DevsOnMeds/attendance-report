@@ -22,6 +22,8 @@ class HomeController
             'test2' => 'a Sample View.',
             'test3' => $sResult
         ];
+        $this->oView->render($response, 'header.php');
         $this->oView->render($response, 'index.php', $aTest);
+        $this->oView->render($response, 'footer.php');
     }
 }
