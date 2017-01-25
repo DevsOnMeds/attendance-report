@@ -15,13 +15,13 @@ class HomeController
 
     public function home($request, $response, $args)
     {
-        $sService = HomeService::run();
+        $sService = new HomeService;
+        $sResult = $sService->run();
         $aTest = [
             'test1' => 'This is',
             'test2' => 'a Sample View.',
-            'test3' => $sService
+            'test3' => $sResult
         ];
         $this->oView->render($response, 'index.php', $aTest);
     }
 }
-

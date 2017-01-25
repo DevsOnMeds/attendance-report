@@ -2,7 +2,7 @@
 
 $container['logger'] = function ($c) {
     $logger = new \Monolog\Logger('my_logger');
-    if (is_dir('../logs'/c) === false) {
+    if (is_dir('../logs') === false) {
         mkdir('../logs/');
         fopen('app.log', 'w');
     }

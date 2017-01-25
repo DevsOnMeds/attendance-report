@@ -9,8 +9,8 @@ class HomeModel
     public function setConnection()
     {
         $oModel = new Home();
-        if (isset($oModel) === true) {
-            return '<br>Succesfully Connected to Database';
-        }
+        $oModel->setConnection('default');
+        $aUsers = $oModel->all();
+        return $aUsers;
     }
 }

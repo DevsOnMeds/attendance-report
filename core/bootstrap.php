@@ -5,6 +5,10 @@ require 'define.php';
 // App Initialization
 require 'app.php';
 
+// Database Initialization
+require 'database.php';
+
+
 // Load Container
 require 'dependencies.php';
 
