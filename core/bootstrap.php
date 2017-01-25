@@ -1,15 +1,12 @@
 <?php
-// Initiate constants
+// Define File paths constants
 require 'define.php';
 
 // App Initialization
 require 'app.php';
 
 // Load Container
-require 'container.php';
-
-// Database connection
-require 'database.php';
+require 'dependencies.php';
 
 // Monolog
 require 'logger.php';

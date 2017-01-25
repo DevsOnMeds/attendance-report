@@ -2,6 +2,7 @@
 namespace App\Controllers;
 
 use Slim\Views\PhpRenderer as View;
+use App\Services\HomeService;
 
 class HomeController
 {
@@ -14,12 +15,13 @@ class HomeController
 
     public function home($request, $response, $args)
     {
-        $test = [
+        $sService = HomeService::run();
+        $aTest = [
             'test1' => 'This is',
             'test2' => 'a Sample View.',
-            'test3' => 'Have fun.'
+            'test3' => $sService
         ];
-        $this->oView->render($response, 'index.php', $test);
+        $this->oView->render($response, 'index.php', $aTest);
     }
 }
 
