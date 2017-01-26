@@ -2,28 +2,20 @@
 namespace App\Controllers;
 
 use Slim\Views\PhpRenderer as View;
-use App\Services\HomeService;
+use App\Models\HomeModel;
 
-class HomeController
+class HomeController extends BaseController
 {
-    protected $oView;
-
-    public function __construct(View $view)
-    {
-        $this->oView = $view;
-    }
-
     public function home($request, $response, $args)
     {
-        $sService = new HomeService;
-        $sResult = $sService->run();
+        $sResult = HomeModel::getAllUsers();
         $aTest = [
             'test1' => 'This is',
             'test2' => 'a Sample View.',
             'test3' => $sResult
         ];
-        $this->oView->render($response, 'header.php');
-        $this->oView->render($response, 'index.php', $aTest);
-        $this->oView->render($response, 'footer.php');
+        $this->view->render($response, 'header.php');
+        $this->view->render($response, 'index.php', $aTest);
+        $this->view->render($response, 'footer.php');
     }
 }

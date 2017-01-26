@@ -4,13 +4,12 @@
   * 2. Create Service Factories.
   */
 
-// Container Initialized
-$container = $app->getContainer();
 
-// Load Twig
+$container['db'] = function ($container) use ($capsule) {
+    return $capsule;
+};// Load Twig
 $container['view'] = new \Slim\Views\PhpRenderer('../templates/');
 
-$container['HomeController'] = function ($c) {
-    $view = $c->get("view");
-    return new \App\Controllers\HomeController($view);
+$container['HomeController'] = function ($container) {
+    return new \App\Controllers\HomeController($container);
 };

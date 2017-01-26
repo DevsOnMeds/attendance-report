@@ -5,8 +5,6 @@
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 $capsule = new Capsule;
-$capsule->addConnection($config['db']);
+$capsule->addConnection($container['settings']['db']);
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
-
-return $capsule;

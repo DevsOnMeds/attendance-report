@@ -24,3 +24,6 @@ $config = [
 
 // App Initialized
 $app = new \Slim\App(['settings' => $config]);
+
+// Container Initialized
+$container = $app->getContainer();
