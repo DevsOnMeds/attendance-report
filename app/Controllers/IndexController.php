@@ -3,9 +3,9 @@ namespace App\Controllers;
 
 use App\Models\HomeModel;
 
-class HomeController extends BaseController
+class IndexController extends BaseController
 {
-    public function home($request, $response, $args)
+    public function index($request, $response, $args)
     {
         $sResult = HomeModel::getAllUsers();
         $aTest = [
@@ -13,6 +13,6 @@ class HomeController extends BaseController
             'test2' => 'a Sample View.',
             'test3' => $sResult
         ];
-        $this->view($response, 'home.php', $aTest);
+        $this->view($response, 'index.php', $aTest);
     }
 }

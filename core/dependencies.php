@@ -13,3 +13,7 @@ $container['view'] = new \Slim\Views\PhpRenderer('../templates/');
 $container['HomeController'] = function ($container) {
     return new \App\Controllers\HomeController($container);
 };
+
+$container['IndexController'] = function ($container) {
+    return new \App\Controllers\IndexController($container);
+};
