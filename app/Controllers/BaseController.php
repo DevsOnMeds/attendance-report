@@ -26,4 +26,10 @@ abstract class BaseController
         $this->view->render($aResponse, $sPage, $aData);
         $this->view->render($aResponse, 'footer.php');
     }
+
+    function redirect($url, $statusCode = 303)
+    {
+       header('Location: ' . $url, true, $statusCode);
+       die();
+    }
 }

@@ -14,6 +14,6 @@ $container['HomeController'] = function ($container) {
     return new \App\Controllers\HomeController($container);
 };
 
-$container['IndexController'] = function ($container) {
-    return new \App\Controllers\IndexController($container);
+$container['AuthController'] = function ($container) {
+    return new \App\Controllers\AuthController($container);
 };
